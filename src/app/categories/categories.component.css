@@ -1,0 +1,64 @@
+.container {
+    font-family: 'FiraGO';
+    font-style: normal;
+    width: 310px;
+}
+
+h1 {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    margin-bottom: 35px;
+    margin-left: 65px;
+    color: #053354;
+
+}
+
+ul {
+    list-style-type: none;
+    padding: 0px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: #053354;
+    margin-bottom: 56px;
+}
+
+li:not(:last-child) {
+    margin-bottom: 27px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.see-more {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #18A4E1;
+    margin-right: 10px;
+    margin-left: 64px;
+
+
+}
+
+
+.category {
+    padding-left: 64px;
+    display: inline-block;
+    position: relative;
+}
+
+.doctors-in-category {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+
+    color: rgba(5, 51, 84, 0.3);
+}
+

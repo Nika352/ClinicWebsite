@@ -1,0 +1,112 @@
+.search-space {
+    /* ძებნა */
+    width: 100vw;
+    height: 120px;
+    background: #ECF2F8;
+    font-family: 'FiraGO';
+    font-style: normal;
+    color: #053354;
+   
+    
+
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    
+    padding-left: 150px;
+    padding-right: 150px;
+    padding-top: 35px;
+}
+
+
+.phone {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+ 
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    /* identical to box height */
+    gap: 20px;
+    letter-spacing: 0.07em;
+}
+
+
+.address-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    /* identical to box height */
+
+    letter-spacing: 0.07em;
+    gap: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    
+}
+
+.circle {
+    position: relative;
+
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    background: #053354;
+}
+
+.search-img {
+    position: absolute;
+    margin: 13px;
+
+}
+
+.search-bar {
+    width: 460px;
+    height: 50px;
+    background: #FFFFFF;
+    border: none;
+    border-radius: 50px;
+}
+
+input:focus {
+    outline: none;
+    border: 1px solid rgba(24, 164, 225, 0.5);
+}
+
+input::placeholder {
+    font-family: 'FiraGO';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+    color: rgba(5, 51, 84, 0.3);
+   
+}
+
+input{
+    font-family: 'FiraGO';
+    font-style: normal;
+    color: #053354;
+    font-size: 14px;
+    line-height: 17px;
+    padding-left: 30px;
+}

@@ -1,0 +1,13 @@
+.flex{
+    display: flex;
+    flex-direction: row;
+}
+
+.height{
+    height: 790px;
+}
+
+app-admin-grid{
+    margin-left: 150px;
+    margin-top: 133px;
+}

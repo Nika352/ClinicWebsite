@@ -1,0 +1,76 @@
+<div class="container" *ngIf="gridAccount">
+    <div class="info">
+        <div class="card-container">
+
+            <label for="fileInput">
+            <img class="profile" [src]="gridAccount.img">
+        </label>
+            <input id="fileInput" type="file" style="display: none" (change)="onFileSelected($event)">
+
+            <div class="name">{{gridAccount.firstname}} {{gridAccount.lastname}}</div>
+            <div class="account-type">{{gridAccount.accountType}}</div>
+            <div class="category" *ngIf="isDoctor" (click)="openPidDialog()">{{gridAccount.category}}</div>
+            <div class="stars" *ngIf="isDoctor">
+                <div class="stars-container">
+                    <ng-container *ngFor="let star of [].constructor(gridAccount.stars)">
+                        <img src="..\assets\images\material-symbols_star-rounded.png" alt="Star" class="star-img">
+                    </ng-container>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-1">
+            <div class="full" (click)="openPidDialog()">
+                <div class="header">
+                    <!-- <img src="..\..\assets\images\edit-svgrepo-com 5.png"> -->
+                    პირადი ნომერი :
+                </div>
+                <div class="small">{{gridAccount.pid}}</div>
+            </div>
+
+            <div class="full">
+                <div class="header" (click)="openDialog()">Email :</div>
+                <div class="small">{{gridAccount.email}}</div>
+            </div>
+
+            <div class="header">პაროლის შეცვლა</div>
+
+        </div>
+
+        <div class="info-2">
+            <div id="schedule" class="full">
+                <div class="header">დაჯავშნილია :</div>
+                <div class="small">(0)</div>
+            </div>
+
+            <div class="header" *ngIf="isDoctor">CV-ს გადმოწერა</div>
+            <div class="log-out" (click)="logOut()">გასვლა</div>
+        </div>
+
+    </div>
+
+    <div class="buttons">
+        <div class="add" mat-button [matMenuTriggerFor]="menu">
+            + დამატება
+        </div>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item class="menu" [routerLink]="['/register']" [queryParams]="{ accountType: 'User' }">მომხმარებელი</button>
+            <button mat-menu-item class="menu" [routerLink]="['/register']" [queryParams]="{ accountType: 'Doctor' }">ექიმი</button>
+            <button mat-menu-item class="menu" [routerLink]="['/register']" [queryParams]="{ accountType: 'Administrator' }">ადმინისტრატორი</button>
+          </mat-menu>
+        <div class="edit">
+            <img src="..\..\assets\images\edit-svgrepo-com 3.png">
+            <div>
+                რედაქტირება
+            </div>
+            
+        </div>
+        <div class="delete">
+            <img src="..\..\assets\images\delete-file-svgrepo-com 3.png">
+            <div>
+                წაშლა
+            </div>
+        </div>
+    </div>
+
+</div>

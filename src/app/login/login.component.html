@@ -1,0 +1,24 @@
+<div class="container">    
+        <h1 class="header">
+            ავტორიზაცია
+        </h1>
+        <form (ngSubmit) = 'login()'>
+            <div class="inputs">
+                <input type="text" name="email" [(ngModel)]="email" placeholder="ელ. ფოსტა / ტელეფონის ნომერი">
+                <input type="password" name="password" [(ngModel)]="password" placeholder="პაროლი">
+            </div>
+            <div class="under-input">
+                <div class="error-space">
+                    <div class="error" *ngIf="error">*პაროლი ან მეილი არასწორია</div>
+                </div>
+
+                <div class="forgot-password"><a routerLink="">
+                        პაროლის აღდგენა
+                    </a></div>
+            </div>
+            <button class="button" type="submit" >შესვლა</button>
+        </form>
+
+    </div>
+
+

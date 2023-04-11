@@ -1,0 +1,44 @@
+app-categories {
+    margin-top: 93px;
+    margin-left: 190px;
+    margin-bottom: 185px;
+    margin-right: 0px;
+}
+
+.container {
+    display: flex;
+    direction: row;
+}
+
+.card-container {
+    position: relative;
+    margin-top: 73px;
+    margin-left: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 1210px;
+    height: 840px;
+    margin-bottom: 50px;
+}
+
+.extend {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+
+
+    color: #053354;
+    cursor: pointer;
+
+
+}
+
+.extend:hover {
+    color: #18A4E1;
+}

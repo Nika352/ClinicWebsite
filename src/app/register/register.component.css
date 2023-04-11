@@ -1,0 +1,180 @@
+.register-space {
+    width: 1530px;
+
+    margin-left: 150px;
+    margin-top: 60px;
+    margin-bottom: 125px;
+
+    font-family: 'FiraGO';
+    font-style: normal;
+    font-weight: 400;
+}
+
+label {
+    color: #053354;
+    margin-bottom: 5px;
+}
+
+.title {
+
+    font-weight: 600;
+    font-size: 26px;
+    color: rgba(24, 164, 225, 1);
+
+}
+
+form {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+
+
+}
+
+.formfield {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+input {
+    font-family: 'FiraGO';
+    font-style: normal;
+    color: #053354;
+    font-size: 14px;
+    line-height: 17px;
+    width: 460px;
+    height: 50px;
+    border: 0;
+    padding-left: 20px;
+}
+
+button {
+    margin-left: 0;
+}
+
+
+input:focus {
+    outline: none;
+    border: 1px solid rgba(24, 164, 225, 0.3);
+    border-radius: 50px;
+
+}
+
+.input-suffix {
+    position: relative;
+}
+
+.suffix {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+}
+
+label {
+    margin-left: 20px;
+}
+
+.code {
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.submit {
+    margin-top: 30px;
+    text-align: right;
+
+}
+
+button {
+    width: 180px;
+    height: 50px;
+    background: #053354;
+    border-radius: 50px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+input::placeholder {
+    font-family: 'FiraGO';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+    color: rgba(5, 51, 84, 0.3);
+
+}
+
+.code-life-span {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    margin-right: 30px;
+    color: rgba(5, 51, 84, 0.3);
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.validator {
+    font-size: smaller;
+    color: red;
+    margin-left: 20px;
+    margin-top: 5px;
+}
+
+.empty-input1{
+    position:relative;
+    font-family: 'FiraGO';
+    font-style: normal;
+    color: #053354;
+    font-size: 14px;
+    line-height: 17px;
+    width: 460px;
+    height: 50px;
+    border: 0;
+    padding-left: 20px;
+}
+
+.empty-input2{
+    position:relative;
+    font-family: 'FiraGO';
+    font-style: normal;
+    color: #053354;
+    font-size: 14px;
+    line-height: 17px;
+    width: 460px;
+    height: 50px;
+    border: 0;
+    padding-left: 20px;
+}
+
+
+.add-img{
+    margin-left: 415px;
+    cursor: pointer;
+}
+
+.last-row{
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+}
+
+.add-cv{
+  
+    margin-left: 415px;
+    cursor: pointer;
+    
+}
+

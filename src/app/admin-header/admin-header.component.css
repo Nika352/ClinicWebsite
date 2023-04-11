@@ -1,0 +1,80 @@
+.container {
+    width: 100vw;
+    height: 158px;
+    align-items: center;
+
+    font-family: 'FiraGO';
+    font-style: normal;
+
+    display: flex;
+    flex-direction: row;
+}
+
+
+.openbtn {
+    width: 45px;
+    height: 40px;
+    cursor: pointer;
+
+}
+
+.sidepanel-space {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 40px;
+    margin-right: 40px;
+    width: 516px;
+    height: 50px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 30px rgba(5, 51, 84, 0.05);
+    border-radius: 25px;
+    font-weight: 500;
+    font-size: 19px;
+    line-height: 22px;
+    color: #053354;
+    margin-left: 148px;
+}
+
+.register:hover {
+    cursor: pointer;
+    color: rgba(24, 164, 225, 1);
+}
+
+.categories:hover {
+    cursor: pointer;
+    color: rgba(24, 164, 225, 1);
+}
+
+.doctors:hover {
+    cursor: pointer;
+    color: rgba(24, 164, 225, 1);
+}
+
+.account-type {
+    width: 1090px;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    margin-left: 16px;
+    justify-content: space-between;
+}
+
+.type {
+    display: flex;
+    width: 350px;
+    height: 50px;
+    background: #F0FAFF;
+    border-radius: 50px;
+
+    font-weight: 500;
+    font-size: 19px;
+    line-height: 22px;
+    /* identical to box height */
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(24, 164, 225, 0.3);
+    border-radius: 50px;
+    color: #18A4E1;
+}

@@ -1,0 +1,23 @@
+<div class="card-container">
+    <div class="visitor-number">
+    <img class="visitors-img" src="..\..\assets\images\ic_baseline-remove-red-eye.png" >
+    293
+    </div>
+    <div class="flexbox"> 
+        <img class="doctor-image" [src]="doctor.img">
+        <div class="doctor-name">{{doctor.firstname}} {{doctor.lastname}}</div>
+        <div class="doctor-category">{{doctor.category}}</div>
+        <div class="stars-container">
+            <ng-container *ngFor="let star of [].constructor(doctor.stars)">
+              <img src="..\assets\images\material-symbols_star-rounded.png" alt="Star" class="star-img">
+            </ng-container>
+          </div>
+    </div>
+   
+    <div class="appointment-frame">
+    <div class="make-appointment">
+        მიღებაზე ჩაწერა
+    </div>
+        <img class="arrow" src="..\..\assets\images\material-symbols_arrow-back-ios-rounded (2).png">
+    </div>
+</div>

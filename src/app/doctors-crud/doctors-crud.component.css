@@ -1,0 +1,143 @@
+.container {
+    width: 1460px;
+    margin-left: 124px;
+    margin-top: 60px;
+    font-family: 'FiraGO';
+    font-style: normal;
+    font-weight: 400;
+    box-sizing: border-box;
+}
+
+.categories {
+    margin-left: 25px;
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 31px;
+
+    color: #18A4E1;
+
+}
+
+.headlines {
+    display: flex;
+    flex-direction: row;
+    padding-left: 56px;
+    padding-right: 375px;
+    margin-top: 57px;
+    align-items: center;
+    justify-content: space-between;
+
+    height: 48px;
+    background: #F0FAFF;
+    border-radius: 10px 10px 0px 0px;
+
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 20px;
+
+    color: #053354;
+
+}
+
+.doctors-container {
+    display: flex;
+    flex-direction: row;
+    padding-left: 56px;
+    align-items: center;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 20px;
+
+
+}
+
+.stars {
+    width: 560px;
+}
+
+.inside-stars {
+    display: flex;
+    flex-direction: row;
+    width: 120px;
+    margin-left: 246px;
+    align-items: center;
+    justify-content: center;
+}
+
+.name {
+    width: 288px;
+}
+
+.category {
+    width: 355px;
+}
+
+.doctor-img {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+}
+
+.buttons {
+    width: 104px;
+    display: flex;
+    direction: row;
+    justify-content: space-between;
+}
+
+.edit-circle {
+    position: relative;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    cursor: pointer;
+
+    background: #DAFAEE;
+}
+
+.edit {
+   
+    margin-left: 8px;
+    margin-top: 6px;
+}
+
+
+.delete-circle {
+    margin-bottom: 16px;
+    position: relative;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    cursor: pointer;
+
+    background: #FF93A6;
+}
+
+
+.delete {
+    
+    margin-left: 9px;
+    margin-top: 8px;
+}
+
+.for-scroll{
+    overflow-x: auto; /* Enable horizontal scrolling */
+    overflow-y: scroll; /* Enable vertical scrolling */
+    height: 548px;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #ECF2F8;
+    border-radius: 10px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #053354;
+    border-radius: 5px;
+  }

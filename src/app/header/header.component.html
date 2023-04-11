@@ -1,0 +1,39 @@
+<header>
+
+    <div class="container">
+        <div class="logo">
+            <a routerLink=""><img src="..\..\assets\images\logo1.png"></a>
+            <div class="clinic"><a routerLink="">კლინიკა</a></div>
+        </div>
+
+        <ul class="header-list">
+            <li class="first-element"><a routerLink="">ექიმები</a></li>
+            <li><a routerLink="">კლინიკები</a></li>
+            <li><a routerLink="">ანოტაციები</a></li>
+            <li><a routerLink="">აქციები</a></li>
+            <li><a routerLink="">სერვისები</a></li>
+            <li><a routerLink="">მედიკამენტები</a></li>
+            <li><a routerLink="">კონტაქტი</a></li>
+        </ul>
+        <div class="authorization">
+            <div class="log-in" *ngIf="!currentAccount"><a (click)="openDialog()">ავტორიზაცია</a>
+            </div>
+            <div class="register" *ngIf="!currentAccount"><a routerLink='/register'>/ რეგისტრაცია</a></div>
+            <img *ngIf="currentAccount && !hasImage" [routerLink]="isAdmin() ? '/admin' : '/user'" class="acc-image"
+                src="..\..\assets\images\workers\Profile_avatar_placeholder_large.png">
+                <img *ngIf="currentAccount && hasImage" [routerLink]="isAdmin() ? '/admin' : '/user'" class="acc-image"
+                [src]="this.currentAccount.img">
+            <div *ngIf="currentAccount " class="acc-name" [routerLink]="isAdmin() ? '/admin' : '/user'">{{ currentAccount.firstname }} {{ currentAccount.lastname }}</div>
+        </div>
+
+        <div class="language">
+            <a>ENG</a>
+        </div>
+
+
+    </div>
+
+    <div class="line">
+        <div class="inner-line"></div>
+    </div>
+</header>

@@ -1,0 +1,18 @@
+<div class="container">
+    <h1 class="categories-header">კატეგორიები</h1>
+    <ul class="categories-list">
+        <li *ngFor="let category of categories"  >
+            <div class="li-container" >
+                <a [routerLink]="category" class="category"  (click)="categoryClicked(category)">
+                    <div class="doctors-in-category">({{getPropertyValue(category)}})</div>
+                    {{category}}
+
+                </a>
+            </div>
+
+        </li>
+    </ul>
+    <div><a href="" class="see-more">სრულად ნახვა</a>
+        <a href=""><img src="..\..\assets\images\material-symbols_arrow-back-ios-rounded.png" class="arrow-img"></a>
+    </div>
+</div>

@@ -1,0 +1,109 @@
+<div class="register-space">
+
+    <div class="title">რეგისტრაცია</div>
+
+    <form [formGroup]="registerForm">
+
+        <div class="formfield">
+            <label for="name" class="name-label">სახელი</label>
+            <input type="text" formControlName="firstname" placeholder="( მინიმუმ 5 სიმბოლო )">
+            <div class="validator"
+                *ngIf="FirstName.errors?.['minlength'] || FirstName.errors?.['required'] && FirstName.touched">
+                *სახელი უნდა შეიცავდეს მინიმუმ 5 სიმბოლოს
+            </div>
+        </div>
+        <div class="formfield">
+            <label for="email" class="email-label">Email</label>
+            <div class="input-suffix">
+                <input type="email" formControlName="email">
+                <div class="validator" *ngIf="Email.errors?.['email'] || Email.errors?.['required'] && Email.touched">
+                    *გთხოვთ შეიყვანოთ ვალიდური მეილი
+                </div>
+                <span class="suffix " (click)="sendMail()"><img
+                        src="..\..\assets\images\mail-right-arrow-svgrepo-com 1.png" alt="mail"></span>
+            </div>
+        </div>
+        <div class="formfield">
+            <label for="personal-number" class="personal-number-label">პირადი ნომერი</label>
+            <input type="number" formControlName="PID" placeholder="( 00000000000 )">
+            <div class="validator"
+                *ngIf="Pid.errors?.['min'] || Pid.errors?.['max']  || Pid.errors?.['required']  && Pid.touched">
+                *გთხოვთ შეიყვანოთ ვალიდური პირადი ნომერი
+            </div>
+        </div>
+        <div class="formfield">
+            <label for="lastname" class="lastname-label">გვარი</label>
+            <input type="text" formControlName="lastname">
+            <div class="validator" *ngIf="LastName.errors?.['required'] && LastName.touched">
+                *გვარის შეყვანა აუცილებელია
+            </div>
+        </div>
+        <div class="formfield" *ngIf="!adminRegister">
+            <div class="code">
+                <label for="activation-code" class="activation-code-label">აქტივაციის კოდი</label>
+
+                <div class="code-life-span">ვადა 30 წთ</div>
+            </div>
+            <input type="text" formControlName="activationCode">
+
+        </div>
+
+        <div class="formfield" *ngIf="adminRegister &&  this.accountType==='Doctor'">
+            <div class="category">
+                <label for="category" class="category-label">კატეგორია</label>
+
+            </div>
+            <input type="text" formControlName="category" placeholder="ანესთეზიოლოგი / თერაპევტი ან სხვა...">
+            <div class="validator" *ngIf="Category.errors?.['required'] && Category.touched ">
+                *გთხოვთ შეიყვანოთ კატეგორია
+            </div>
+        </div>
+
+        <div class="formfield">
+            <label for="password" class="password-label">პაროლი</label>
+            <input type="password" formControlName="password" placeholder="( მინიმუმ 8 სიმბოლო : @ 7 , )">
+            <div class="validator"
+                *ngIf="Password.errors?.['pattern'] || Password.errors?.['required'] && Password.touched">
+                *აუცილებელია 8 სიმბოლო (დიდი/პატარა ასო, სიმბოლო, ციფრი)
+            </div>
+        </div>
+
+
+        <div class="last-row" *ngIf="isDoctor">
+
+            <div class="formField">
+                <label for="img" class="img-label">ფოტოსურათი</label>
+                <div class="empty-input2">
+                    <label for="imgInput">
+                        <img src="..\..\assets\images\photo-outline-svgrepo-com 1.png" class="add-img">
+                    </label>
+                    <input id="imgInput" type="file" formControlName="profile" style="display: none" accept="image/*"
+                        (change)="onImgSelected($event)">
+                        <div class="validator" *ngIf="Profile.errors?.['required']">
+                            *გთხოვთ შეიყვანოთ ფოტოსურათი
+                        </div>
+                </div>
+            </div>
+
+            <div class="formField">
+                <label for="file" class="file-label">CV</label>
+                <div class="empty-input1">
+                    <label for="fileInput">
+                        <img src="..\..\assets\images\document-new-svgrepo-com 1.png" class="add-cv">
+                    </label>
+                    <input id="fileInput" type="file" formControlName="cv" style="display: none" accept="application/pdf"
+                        (change)="onCvSelected($event)">
+                        <div class="validator" *ngIf="Cv.errors?.['required']">
+                            *გთხოვთ შეიყვანოთ სი-ვი
+                        </div>
+                </div>
+            </div>
+            
+        </div>
+
+    </form>
+    <div class="submit">
+        <button class="register-button" (click)="submit()">რეგისტრაცია</button>
+    </div>
+
+</div>

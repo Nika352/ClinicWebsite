@@ -1,0 +1,92 @@
+.container {
+    height: 800px;
+    width: 366px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    font-family: 'FiraGO';
+    font-style: normal;
+}
+
+img {
+    margin-top: 45px;
+    width: 157px;
+    height: 157px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.username {
+    margin-top: 10px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: #18A4E1;
+}
+
+.pid-header {
+    margin-top: 45px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: #053354;
+}
+
+.pid {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: rgba(5, 51, 84, 0.3);
+}
+
+
+.email-header {
+    margin-top: 35px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: #053354;
+}
+
+.email {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: rgba(5, 51, 84, 0.3);
+}
+
+.change-password {
+    margin-top: 35px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: #053354;
+
+    cursor:pointer;
+}
+
+.schedule-header {
+    margin-top: 35px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: #053354;
+}
+
+.schedule {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: rgba(5, 51, 84, 0.3);
+}
+
+.log-out {
+    cursor: pointer;
+    margin-top: 40px;
+    font-weight: 600;
+    font-size: 19px;
+    line-height: 22px;
+    color: #b12323;
+}

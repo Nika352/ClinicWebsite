@@ -1,0 +1,7 @@
+
+<label for="fileInput" class="image-label">
+    <img *ngIf="!imageIsUploaded()" src="..\..\assets\images\workers\Profile_avatar_placeholder_large.png" alt="Image">
+    <img *ngIf="imageIsUploaded()" [src]="imageData" alt="Image">
+</label>
+  <input id="fileInput" type="file" style="display: none" (change)="onFileSelected($event)">
+

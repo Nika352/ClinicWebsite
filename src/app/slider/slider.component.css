@@ -1,0 +1,103 @@
+
+.slider{
+position: relative;
+width: 100vw;
+height: 600px;
+}
+
+
+
+.slider-photo{
+   
+    width: 100vw;
+    height: 600px;
+}
+
+.photo-blur{
+    /* Rectangle 18 */
+position: absolute;
+width: 1920px;
+height: 600px;
+left: 0px;
+top: 0px;
+
+background: rgba(5, 51, 84, 0.15);
+}
+
+
+.photo-left-blur{
+    /* Rectangle 31 */
+
+position: absolute;
+width: 1087px;
+height: 600px;
+left: 0px;
+top: 0px;
+
+background: rgba(5, 51, 84, 0.25);
+backdrop-filter: blur(2px);
+/* Note: backdrop-filter has minimal browser support */
+
+border-radius: 0px 50px 50px 0px;
+}
+
+.slider-text{
+    /* აირჩიე კლინიკა რომელსაც შეგიძლია ენდო */
+
+position: absolute;
+width: 676px;
+height: 116px;
+left: 150px;
+top: 184px;
+
+font-family: 'FiraGO';
+font-style: normal;
+font-weight: 600;
+font-size: 48px;
+line-height: 58px;
+
+color: #FFFFFF;
+}
+
+.white-space{
+    /* Rectangle 33 */
+
+position: relative;
+width: 370px;
+height: 65px;
+left: 150px;
+top: 352px;
+
+background: #FFFFFF;
+border-radius: 50px;
+}
+
+.address-sign{
+   /* location-svgrepo-com (1) 1 */
+
+position: absolute;
+width: 30px;
+height: 30px;
+left: 30px;
+top: 18px;
+
+}
+
+.address{
+    /* იაკობ ნიკოლაძე №10 */
+
+position: absolute;
+width: 233px;
+height: 26px;
+left: 70px;
+top: 20px;
+
+font-family: 'FiraGO';
+font-style: normal;
+font-weight: 400;
+font-size: 21px;
+line-height: 26px;
+
+color: #053354;
+
+}

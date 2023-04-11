@@ -1,0 +1,17 @@
+<div class="container">    
+    <h1 class="header">
+        ინფორმაციის ცვლილება
+    </h1>
+    <form [formGroup]="pidForm">
+        
+            <label>შეიყვანეთ ახალი პირადი ნომერი</label>
+            <input type="number" name="category" formControlName="PID" placeholder="( 00000000000 )">
+            <div class="validator" *ngIf="Pid.errors?.['min'] || Pid.errors?.['max']  || Pid.errors?.['required']  && Pid.touched">
+                *გთხოვთ შეიყვანოთ ვალიდური პირადი ნომერი
+            </div>
+            
+        <button class="button" type="submit" (click)="onSubmit()">შენახვა</button>
+    </form>
+
+
+</div>

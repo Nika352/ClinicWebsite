@@ -1,0 +1,41 @@
+<div class="container">
+
+    <div class="categories">
+        კატეგორიები
+    </div>
+
+    <div class="headlines">
+        <div>სახელი</div>
+        <div>კატეგორია</div>
+        <div>ფოტოსურათი</div>
+        <div>რეიტინგი</div>
+    </div>
+
+    <div class="for-scroll">
+        <ng-container *ngFor="let doctor of doctors">
+            <div class="doctors-container">
+                <div class="name">{{doctor.firstname}} {{doctor.lastname}}</div>
+                <div class="category">{{doctor.category}}</div>
+                <img class="photo" [src]="doctor.img" class="doctor-img">
+                <div class="stars">
+                    <div class="inside-stars">
+                        <ng-container *ngFor="let star of [].constructor(doctor.stars)">
+                            <img src="..\assets\images\material-symbols_star-rounded.png" alt="Star" class="star-img">
+                        </ng-container>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <div class="edit-circle">
+                        <img class="edit" src="..\..\assets\images\edit-svgrepo-com 8.png"  [routerLink]="['/admin']"  [queryParams]="{ doctorEmail: doctor.email }">
+                    </div>
+                    <div class="delete-circle">
+                        <img class="delete" src="..\..\assets\images\delete-svgrepo-com 10.png">
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+
+
+
+</div>

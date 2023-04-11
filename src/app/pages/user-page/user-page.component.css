@@ -1,0 +1,16 @@
+app-categories{
+    margin-left: 150px;
+    margin-top: 41px;
+    margin-bottom: 190px;
+
+}
+
+app-user{
+    margin-left: 42px;
+    margin-top: 41px;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+}
