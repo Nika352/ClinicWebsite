@@ -9,12 +9,12 @@
             </div>
             <div class="under-input">
                 <div class="error-space">
-                    <div class="error" *ngIf="error">*პაროლი ან მეილი არასწორია</div>
+                    <div class="error" *ngIf="error">{{message}}</div>
                 </div>
 
-                <div class="forgot-password"><a routerLink="">
+                <div class="forgot-password" (click)="openDialog()">
                         პაროლის აღდგენა
-                    </a></div>
+                    </div>
             </div>
             <button class="button" type="submit" >შესვლა</button>
         </form>

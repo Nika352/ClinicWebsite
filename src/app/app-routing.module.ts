@@ -28,8 +28,9 @@ export class AppRoutingModule {
   constructor(private accountService: AccountService, private router: Router) {
     this.accountService.getDoctors().subscribe((accounts: Account[]) => {
       this.doctors = accounts;
+     
       this.categories = this.extractCategories(this.doctors);
-
+      
       this.generateRoutesAndResetConfig();
     });
   }
@@ -41,6 +42,7 @@ export class AppRoutingModule {
         categories.add(doctor.category);
       }
     }
+    
     return Array.from(categories);
   }
 
@@ -49,7 +51,6 @@ export class AppRoutingModule {
       ...routes,
       ...this.generateCategoryRoutes(),
     ];
-
     this.router.resetConfig(routesWithCategories);
   }
 

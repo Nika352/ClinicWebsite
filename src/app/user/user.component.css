@@ -90,3 +90,20 @@ img {
     line-height: 22px;
     color: #b12323;
 }
+
+.verification{
+    margin-top: 35px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: #053354;
+
+    cursor:pointer;
+}
+
+.error{
+    font-size: smaller;
+    color: red;
+
+    margin-top: 5px;
+}

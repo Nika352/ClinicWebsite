@@ -1,0 +1,17 @@
+<div class="container">    
+    <h1 class="header">
+        ინფორმაციის ცვლილება
+    </h1>
+    <form [formGroup]="emailForm">
+        
+            <label>შეიყვანეთ ახალი იმეილი</label>
+            <input type="email" name="email" formControlName="email" placeholder="იმეილი">
+            <div class="validator" *ngIf="Email.errors?.['email'] || Email.errors?.['required'] && Email.touched">
+                *გთხოვთ შეიყვანოთ ვალიდური იმეილი
+            </div>
+            
+        <button class="button" type="submit" (click)="onSubmit()">შენახვა</button>
+    </form>
+
+
+</div>

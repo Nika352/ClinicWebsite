@@ -1,0 +1,64 @@
+.full-container{
+    font-family: 'FiraGO';
+    font-style: normal;
+    display: flex;
+    direction: row;
+}
+
+.header{
+    display: flex;
+    flex-direction: row;
+    width: 200px;
+    height: 20px;
+    align-items: center;
+    justify-content:space-between;
+}
+
+.rotate-image{
+    transform: rotate(180deg);
+    padding-top: 12px;
+}
+
+
+
+.month{
+    color: rgba(24, 164, 225, 1); 
+
+}
+
+.weekdays{
+    width: 700px;
+    height: 48px;
+   padding: none;
+   
+}
+
+ul{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:space-between;
+    list-style: none;
+    
+}
+
+.hours{
+    width: 130px;
+    height: 580px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:space-between;
+    list-style: none;
+}
+
+.rotate-image1{
+    transform: rotate(180deg);
+    padding-top: 7px;
+}
+
+.schedule{
+    width: 700px;
+    height: 540px;
+    background-color: red;
+}

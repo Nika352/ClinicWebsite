@@ -28,9 +28,19 @@
                     <div class="edit-circle">
                         <img class="edit" src="..\..\assets\images\edit-svgrepo-com 8.png"  [routerLink]="['/admin']"  [queryParams]="{ doctorEmail: doctor.email }">
                     </div>
-                    <div class="delete-circle">
+                    <div mat-button [matMenuTriggerFor]="menu">
+                    <div class="delete-circle" >
                         <img class="delete" src="..\..\assets\images\delete-svgrepo-com 10.png">
+                     
                     </div>
+                </div>
+                    <mat-menu #menu="matMenu">
+                        <h1 class="delete-text">გსურთ მომხმარებლის წაშლა?</h1>
+
+                        <button mat-menu-item class="menu" (click)="deleteAccount(doctor.firstname, doctor.lastname)" >დიახ</button>
+                        <button mat-menu-item class="menu" >არა</button>
+                        
+                      </mat-menu>
                 </div>
             </div>
         </ng-container>

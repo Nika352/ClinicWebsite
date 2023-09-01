@@ -9,11 +9,23 @@
 
             <div class="name">{{gridAccount.firstname}} {{gridAccount.lastname}}</div>
             <div class="account-type">{{gridAccount.accountType}}</div>
-            <div class="category" *ngIf="isDoctor" (click)="openPidDialog()">{{gridAccount.category}}</div>
+            <div class="category" *ngIf="isDoctor" (click)="openCategoryDialog()">{{gridAccount.category}}</div>
             <div class="stars" *ngIf="isDoctor">
                 <div class="stars-container">
                     <ng-container *ngFor="let star of [].constructor(gridAccount.stars)">
+                        <div mat-button [matMenuTriggerFor]="menu">
+                        
                         <img src="..\assets\images\material-symbols_star-rounded.png" alt="Star" class="star-img">
+                        
+                        </div>
+                        <mat-menu #menu="matMenu">
+                            <button mat-menu-item class="menu" (click)="changeStars(1)" >1</button>
+                            <button mat-menu-item class="menu" (click)="changeStars(2)">2</button>
+                            <button mat-menu-item class="menu" (click)="changeStars(3)">3</button>
+                            <button mat-menu-item class="menu" (click)="changeStars(4)">4</button>
+                            <button mat-menu-item class="menu" (click)="changeStars(5)">5</button>
+                            
+                          </mat-menu>
                     </ng-container>
                 </div>
             </div>
@@ -28,12 +40,12 @@
                 <div class="small">{{gridAccount.pid}}</div>
             </div>
 
-            <div class="full">
-                <div class="header" (click)="openDialog()">Email :</div>
+            <div class="full" (click)="openEmailDialog()">
+                <div class="header" >Email :</div>
                 <div class="small">{{gridAccount.email}}</div>
             </div>
 
-            <div class="header">პაროლის შეცვლა</div>
+            <div class="header" (click)="openPasswordDialog()">პაროლის შეცვლა</div>
 
         </div>
 
@@ -43,7 +55,10 @@
                 <div class="small">(0)</div>
             </div>
 
-            <div class="header" *ngIf="isDoctor">CV-ს გადმოწერა</div>
+            <div class="header" *ngIf="isDoctor" (click)="onDownloadCv()">CV-ს გადმოწერა</div>
+
+            
+
             <div class="log-out" (click)="logOut()">გასვლა</div>
         </div>
 
@@ -65,11 +80,18 @@
             </div>
             
         </div>
-        <div class="delete">
+        <div class="delete" mat-button [matMenuTriggerFor]="menu">
             <img src="..\..\assets\images\delete-file-svgrepo-com 3.png">
             <div>
                 წაშლა
             </div>
+            <mat-menu #menu="matMenu">
+                <h1 class="delete-text">გსურთ მომხმარებლის წაშლა? </h1>
+
+                <button mat-menu-item class="menu" (click)="deleteAccount(gridAccount.email)" >დიახ</button>
+                <button mat-menu-item class="menu" >არა</button>
+                
+              </mat-menu>
         </div>
     </div>
 

@@ -1,1 +1,17 @@
-<p>category-dialog works!</p>
+<div class="container">    
+    <h1 class="header">
+        ინფორმაციის ცვლილება
+    </h1>
+    <form [formGroup]="categoryForm">
+        
+            <label>შეიყვანეთ ახალი კატეგორია</label>
+            <input type="text" name="category" formControlName="category" placeholder="კატეგორია">
+            <div class="validator" *ngIf="Category.errors?.['required'] && Category.touched">
+                *გთხოვთ შეიყვანოთ ვალიდური კატეგორია
+            </div>
+            
+        <button class="button" type="submit" (click)="onSubmit()">შენახვა</button>
+    </form>
+
+
+</div>

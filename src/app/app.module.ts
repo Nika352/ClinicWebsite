@@ -31,6 +31,11 @@ import {MatButtonModule} from '@angular/material/button';
 import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
 import { CategoryDialogComponent } from './edit-dialogs/category-dialog/category-dialog.component';
 import { PidDialogComponent } from './edit-dialogs/pid-dialog/pid-dialog.component';
+import { EmailDialogComponent } from './edit-dialogs/email-dialog/email-dialog.component';
+import { PasswordDialogComponent } from './edit-dialogs/password-dialog/password-dialog.component';
+import { SchedulerComponent } from './scheduler/scheduler.component';
+import { VerificationComponent } from './verification/verification.component';
+import { RecoverPasswordComponent } from './recover-password/recover-password.component';
 
 
 
@@ -56,6 +61,11 @@ import { PidDialogComponent } from './edit-dialogs/pid-dialog/pid-dialog.compone
     EditDialogComponent,
     CategoryDialogComponent,
     PidDialogComponent,
+    EmailDialogComponent,
+    PasswordDialogComponent,
+    SchedulerComponent,
+    VerificationComponent,
+    RecoverPasswordComponent,
 
   ],
   imports: [

@@ -7,6 +7,10 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatDialog, MatDialogConfig} from "@angular/material/dialog";
 import { EditDialogComponent } from '../edit-dialog/edit-dialog.component';
 import { PidDialogComponent } from '../edit-dialogs/pid-dialog/pid-dialog.component';
+import { CategoryDialogComponent } from '../edit-dialogs/category-dialog/category-dialog.component';
+import { EmailDialogComponent } from '../edit-dialogs/email-dialog/email-dialog.component';
+import { PasswordDialogComponent } from '../edit-dialogs/password-dialog/password-dialog.component';
+import { VerificationComponent } from '../verification/verification.component';
 
 
 @Component({
@@ -53,6 +57,55 @@ export class AdminGridComponent {
 }
 
 
+
+openPidDialog(){
+  this.dialog.open(PidDialogComponent,  {
+    data: { email: this.gridAccount?.email, oldPid: this.gridAccount?.pid },
+    height: '350px',
+    width: '500px',
+  });
+}
+
+openCategoryDialog(){
+  this.dialog.open(CategoryDialogComponent,  {
+    data: { email: this.gridAccount?.email, oldCategory: this.gridAccount?.category },
+    height: '350px',
+    width: '500px',
+  });
+}
+
+openEmailDialog(){
+  this.dialog.open(EmailDialogComponent,  {
+    data: { oldEmail: this.gridAccount?.email },
+    height: '350px',
+    width: '500px',
+  });
+}
+
+openPasswordDialog(){
+  this.dialog.open(PasswordDialogComponent,  {
+    data: { email: this.gridAccount?.email, oldPassword: this.gridAccount?.password },
+    height: '350px',
+    width: '500px',
+  });
+}
+
+changeStars(num : number){
+
+  const email = this.gridAccount?.email;
+  if(email)
+  this.accountService.changeStars(email, num).subscribe(
+    (response) => {
+      console.log('Response:', response);
+      window.location.reload();
+    },
+    (error) => {
+      console.error('Error:', error);
+      // Handle the error appropriately
+    }
+  );   
+}
+
     //USED FOR IMAGE UPLOAD (base64)
     imageData:any = '';
     onFileSelected(event: any) {
@@ -86,23 +139,55 @@ export class AdminGridComponent {
     }
     //USED FOR IMAGE UPLOAD (base64)
 
-    openDialog(){
-      this.dialog.open(EditDialogComponent,  {
-        height: '350px',
-        width: '500px',
-      });
+    onDownloadCv(){
+      const cv = this.gridAccount?.cv;
+      if (cv) {
+        this.downloadPDF(cv, 'cv');
+      } else {
+        // Handle the case when cv is not available
+        // For example, display an error message or take alternative action
+        console.error('CV is not available');
+      }
     }
 
-    openPidDialog(){
-      this.dialog.open(PidDialogComponent,  {
-        data: { oldPid: this.gridAccount?.pid },
-        height: '350px',
-        width: '500px',
-      });
-    }
+    downloadPDF(base64String: string, fileName: string) {
+      base64String = base64String.replace("data:application/pdf;base64,", ""); // Assign the replaced value back to base64String
 
-    openCategoryDialog(){
+      // Convert the base64 string to bytes
+      const byteCharacters = atob(base64String);
+      // Convert the byte array to ArrayBuffer
+      const byteNumbers = new Array(byteCharacters.length);
+      for (let i = 0; i < byteCharacters.length; i++) {
+        byteNumbers[i] = byteCharacters.charCodeAt(i);
+      }
+      const byteArray = new Uint8Array(byteNumbers);
+      const arrayBuffer = byteArray.buffer;
+    
+      // Create a Blob from the ArrayBuffer
+      const blob = new Blob([arrayBuffer], { type: 'application/pdf' });
+    
+      // Generate a temporary URL for the Blob
+      const url = window.URL.createObjectURL(blob);
+    
+      // Create a temporary anchor tag to trigger the download
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = fileName;
+      link.click();
+    
+      // Clean up the temporary URL and anchor tag
+      window.URL.revokeObjectURL(url);
+      link.remove();
+    }
+    
+
+    deleteAccount(email : string | null){
+      if(email){
+        this.accountService.deleteAccount(email);
+      }
       
     }
+   
+
 }
   

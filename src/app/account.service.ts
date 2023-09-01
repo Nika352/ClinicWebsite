@@ -68,6 +68,58 @@ export class AccountService {
     return this.http.get<number>(apiUrl, options);
   }
 
+  changePid(email: string, pid: string) {
+    const headers = new HttpHeaders().set('Content-Type', 'application/json');
+    const options = { headers: headers };
+    console.log(email, pid);
+    const apiUrl = `${this.apiUrl}/changePid?email=${encodeURIComponent(email)}&pid=${encodeURIComponent(pid)}`;
+    return this.http.put(apiUrl, null, options);
+  }
+
+  changeCategory(email: string, category: string) {
+    const headers = new HttpHeaders().set('Content-Type', 'application/json');
+    const options = { headers: headers };
+    console.log(email, category);
+    const apiUrl = `${this.apiUrl}/changeCategory?email=${encodeURIComponent(email)}&category=${encodeURIComponent(category)}`;
+    return this.http.put(apiUrl, null, options);
+  }
+
+  changeEmail(email: string, newEmail: string) {
+    const headers = new HttpHeaders().set('Content-Type', 'application/json');
+    const options = { headers: headers };
+    console.log(email, newEmail);
+    const apiUrl = `${this.apiUrl}/changeEmail?email=${encodeURIComponent(email)}&newEmail=${encodeURIComponent(newEmail)}`;
+    return this.http.put(apiUrl, null, options);
+  }
+
+  changePassword(email: string, pass: string) {
+    const headers = new HttpHeaders().set('Content-Type', 'application/json');
+    const options = { headers: headers };
+    console.log(email, pass);
+    const apiUrl = `${this.apiUrl}/changePassword?email=${encodeURIComponent(email)}&password=${encodeURIComponent(pass)}`;
+    return this.http.put(apiUrl, null, options);
+  }
+
+  changeStars(email: string, stars: number) {
+    const headers = new HttpHeaders().set('Content-Type', 'application/json');
+    const options = { headers: headers };
+    console.log(email, stars);
+    const apiUrl = `${this.apiUrl}/changeStars?email=${encodeURIComponent(email)}&stars=${encodeURIComponent(stars)}`;
+    return this.http.put(apiUrl, null, options);
+  }
+
+  deleteAccount(email: string){
+
+    const apiUrl = `${this.apiUrl}/deleteAccount?email=${encodeURIComponent(email)}`;
+    this.http.delete(apiUrl).subscribe(
+      (response) => {
+        console.log('Account deleted successfully:', response);
+      },
+      (error) => {
+        console.error('Error deleting account:', error);
+      }
+    );
+}
 
 }
 

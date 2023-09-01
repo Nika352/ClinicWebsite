@@ -108,3 +108,7 @@ a{
     text-decoration: none;
 }
 
+.forgot-password{
+    cursor: pointer;
+}
+

@@ -124,6 +124,7 @@
     overflow-x: auto; /* Enable horizontal scrolling */
     overflow-y: scroll; /* Enable vertical scrolling */
     height: 548px;
+    margin-bottom: 100px;
 }
 
 ::-webkit-scrollbar {
@@ -141,3 +142,16 @@
     background: #053354;
     border-radius: 5px;
   }
+
+  .delete-text{
+    margin-top: 15px;
+    margin-left: 15px;
+    font-family: 'FiraGO';
+    font-style: normal;
+    font-weight: 400;
+    color: #053354;
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+ 

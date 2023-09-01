@@ -4,6 +4,9 @@ import { AccountService } from '../account.service';
 import { Account } from '../account';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
+import { Injectable } from '@angular/core';
+import { EmailService } from '../email.service';
+
 
 @Component({
   selector: 'app-register',
@@ -19,7 +22,7 @@ export class RegisterComponent implements OnInit {
 
   isDoctor = false;
 
-  constructor(private accountService: AccountService, private router: Router, private route: ActivatedRoute) {
+  constructor(private accountService: AccountService, private router: Router, private route: ActivatedRoute, private emailService: EmailService) {
 
   }
 
@@ -67,7 +70,6 @@ export class RegisterComponent implements OnInit {
 
 
   submit() {
-
     if (this.registerForm.valid) {
       let account = new Account(); // create a new User object
       account.firstname = this.registerForm.get('firstname')!.value;
@@ -84,13 +86,49 @@ export class RegisterComponent implements OnInit {
         account.img = this.imageData;
         account.category = this.registerForm.get('category')!.value;
         account.cv = this.pdfData;
+        const jsonString: string = JSON.stringify(account);
+        this.accountService.putAccountInDb(account).subscribe();
+        if (!localStorage.getItem('currentAccount')) {
+          localStorage.setItem('currentAccount', JSON.stringify(account));
+        }
+        window.location.href = '';
+      } else {
+
+        const code = this.registerForm.get('activationCode')!.value!;
+        console.log(code);
+
+        this.emailService.checkCode(account.email!, code).subscribe(
+          codeCheck => {
+            if(codeCheck){
+              const jsonString: string = JSON.stringify(account);
+              this.accountService.putAccountInDb(account).subscribe();
+              if (!localStorage.getItem('currentAccount')) {
+                localStorage.setItem('currentAccount', JSON.stringify(account));
+              }
+              window.location.href = '';
+            } else {
+
+            }
+            
+          },
+          error => {
+            if(localStorage.getItem("currentAccount")){
+              const jsonString: string = JSON.stringify(account);
+              this.accountService.putAccountInDb(account).subscribe();
+              if (!localStorage.getItem('currentAccount')) {
+                localStorage.setItem('currentAccount', JSON.stringify(account));
+              }
+              window.location.href = '';
+            } else{
+              console.log("code is false or other type of error occured")
+            }
+          }
+
+        );
       }
-      const jsonString: string = JSON.stringify(account);
-      this.accountService.putAccountInDb(account).subscribe();
-      if (!localStorage.getItem('currentAccount')) {
-        localStorage.setItem('currentAccount', JSON.stringify(account));
-      }
-      window.location.href = '';
+
+
+
     }
 
 
@@ -124,7 +162,18 @@ export class RegisterComponent implements OnInit {
 
 
 
-  sendMail() {
+  sendMail(email: string) {
+    console.log(email);
+    this.emailService.addCode(email).subscribe(
+      response => {
+        console.log('Response from API:', response);
+        // Handle any actions after successful response
+      },
+      error => {
+        console.error('Error:', error);
+        // Handle error cases if needed
+      }
+    );
   }
 
 

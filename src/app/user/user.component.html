@@ -13,10 +13,13 @@
     <div class="email-header">Email :</div>
     <div class="email">{{currentAccount.email}}</div>
 
-    <div class="change-password">პაროლის შეცვლა</div>
+    <div class="change-password" (click)="openPasswordChange()">პაროლის შეცვლა</div>
+    <div class="error">{{message}}</div>
 
     <div class="schedule-header">ჩემი ჯავშანი :</div>
     <div class="schedule">(0)</div>
+
+    <div class="verification" (click)="openVerificationDialog()" [ngStyle]="{ 'color': isVerified ? 'green' : 'red' }">2-Step Verification</div>
 
     <div class="log-out" (click)="logOut()">გასვლა</div>
 

@@ -19,7 +19,7 @@
                 <div class="validator" *ngIf="Email.errors?.['email'] || Email.errors?.['required'] && Email.touched">
                     *გთხოვთ შეიყვანოთ ვალიდური მეილი
                 </div>
-                <span class="suffix " (click)="sendMail()"><img
+                <span class="suffix " (click)="sendMail(Email.value)"><img
                         src="..\..\assets\images\mail-right-arrow-svgrepo-com 1.png" alt="mail"></span>
             </div>
         </div>
@@ -45,7 +45,9 @@
                 <div class="code-life-span">ვადა 30 წთ</div>
             </div>
             <input type="text" formControlName="activationCode">
-
+            <div class="validator-mail">
+                *შეიყვანეთ 6 ნიშნა კოდი მითითებული მეილიდან
+            </div>
         </div>
 
         <div class="formfield" *ngIf="adminRegister &&  this.accountType==='Doctor'">
@@ -79,9 +81,9 @@
                     </label>
                     <input id="imgInput" type="file" formControlName="profile" style="display: none" accept="image/*"
                         (change)="onImgSelected($event)">
-                        <div class="validator" *ngIf="Profile.errors?.['required']">
-                            *გთხოვთ შეიყვანოთ ფოტოსურათი
-                        </div>
+                    <div class="validator" *ngIf="Profile.errors?.['required']">
+                        *გთხოვთ შეიყვანოთ ფოტოსურათი
+                    </div>
                 </div>
             </div>
 
@@ -91,14 +93,14 @@
                     <label for="fileInput">
                         <img src="..\..\assets\images\document-new-svgrepo-com 1.png" class="add-cv">
                     </label>
-                    <input id="fileInput" type="file" formControlName="cv" style="display: none" accept="application/pdf"
-                        (change)="onCvSelected($event)">
-                        <div class="validator" *ngIf="Cv.errors?.['required']">
-                            *გთხოვთ შეიყვანოთ სი-ვი
-                        </div>
+                    <input id="fileInput" type="file" formControlName="cv" style="display: none"
+                        accept="application/pdf" (change)="onCvSelected($event)">
+                    <div class="validator" *ngIf="Cv.errors?.['required']">
+                        *გთხოვთ შეიყვანოთ სი-ვი
+                    </div>
                 </div>
             </div>
-            
+
         </div>
 
     </form>

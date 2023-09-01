@@ -20,5 +20,15 @@ export class DoctorsCRUDComponent {
     });
   }
 
+  deleteAccount(firstname: string | null, lastname : string | null){
+    const deletedAccount=this.doctors?.find(doctor =>
+      doctor.firstname === firstname && doctor.lastname === lastname
+      );
+      if(deletedAccount && deletedAccount.email){
+        this.accountService.deleteAccount(deletedAccount.email);
+        window.location.href = '';
+      }
+  }
+
  
 }
